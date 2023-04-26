@@ -1,7 +1,6 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 
 const ChatListsItem = ({ chats }) => {
-  console.log(chats, "chats");
   return (
     <View style={styles.contaier}>
       <Image

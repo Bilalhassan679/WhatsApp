@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 10,
 
-    //shodow
+    //shadow
     shadowColor: "#000",
     shadowOffset: {
       width: 0,

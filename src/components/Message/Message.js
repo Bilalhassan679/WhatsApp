@@ -28,7 +28,6 @@ export default Message;
 
 const styles = StyleSheet.create({
   container: {
-    width: "80%",
     margin: 5,
     padding: 10,
     borderRadius: 10,
@@ -41,7 +40,6 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.18,
     shadowRadius: 1.0,
-
     elevation: 1,
   },
   time: {

@@ -43,7 +43,7 @@ const MainTabNavigator = () => {
         name="Chats"
         component={ChatsScreen}
         // options={tabBarComponent("ios-chatbubbles-sharp")}
-        options={{
+        options={({ navigation }) => ({
           tabBarIcon: ({ color, size }) => (
             <Ionicons
               name={"ios-chatbubbles-sharp"}
@@ -55,6 +55,7 @@ const MainTabNavigator = () => {
           headerRight: () => {
             return (
               <Entypo
+                onPress={() => navigation.navigate("Contants")}
                 name="new-message"
                 color={"royalblue"}
                 size={20}
@@ -62,7 +63,7 @@ const MainTabNavigator = () => {
               />
             );
           },
-        }}
+        })}
       />
       <Tab.Screen
         name="Status7"

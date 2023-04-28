@@ -9,22 +9,18 @@ const Message = ({ message }) => {
     return message.user.id === "u1";
   };
   return (
-    <SafeAreaView>
-      <View
-        style={[
-          styles.container,
-          {
-            backgroundColor: isMyMessage() ? "#DCF8C5" : "white",
-            alignSelf: isMyMessage() ? "flex-end" : "flex-start",
-          },
-        ]}
-      >
-        <Text>{message?.text}</Text>
-        <Text style={styles.time}>
-          {dayjs(message.createdAt).fromNow(true)}
-        </Text>
-      </View>
-    </SafeAreaView>
+    <View
+      style={[
+        styles.container,
+        {
+          backgroundColor: isMyMessage() ? "#DCF8C5" : "white",
+          alignSelf: isMyMessage() ? "flex-end" : "flex-start",
+        },
+      ]}
+    >
+      <Text>{message?.text}</Text>
+      <Text style={styles.time}>{dayjs(message.createdAt).fromNow(true)}</Text>
+    </View>
   );
 };
 

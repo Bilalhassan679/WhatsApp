@@ -1,4 +1,4 @@
-import { ImageBackground } from "react-native";
+import { ImageBackground, KeyboardAvoidingView, Platform } from "react-native";
 import { StyleSheet, Text, View, FlatList } from "react-native";
 import bg from "../../assets/images/BG.png";
 import message from "../../assets/data/messages.json";
@@ -18,17 +18,23 @@ const ChatScreen = ({ route, navigation }) => {
     });
   }, [name]);
   return (
-    <ImageBackground source={bg} style={styles.bg}>
-      <FlatList
-        data={message}
-        renderItem={({ item }) => {
-          return <Message message={item} />;
-        }}
-        inverted
-        style={styles.message}
-      />
-      <InputBox />
-    </ImageBackground>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      keyboardVerticalOffset={Platform.OS === "ios" ? 60 : 90}
+      style={styles.bg}
+    >
+      <ImageBackground source={bg} style={styles.bg}>
+        <FlatList
+          data={message}
+          renderItem={({ item }) => {
+            return <Message message={item} />;
+          }}
+          inverted
+          style={styles.message}
+        />
+        <InputBox />
+      </ImageBackground>
+    </KeyboardAvoidingView>
   );
 };
 
@@ -39,7 +45,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   message: {
-    marginTop: 10,
     padding: 10,
   },
 });

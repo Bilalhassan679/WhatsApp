@@ -15,6 +15,7 @@ const Navigator = () => {
       <Stack.Navigator
         screenOptions={{
           headerStyle: { backgroundColor: "whitesmoke" },
+          headerTitleAlign: "center",
         }}
       >
         <Stack.Screen

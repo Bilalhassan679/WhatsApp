@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import { AntDesign, MaterialIcons } from "@expo/vector-icons";
+import { SafeAreaView } from "react-native-safe-area-context";
 const InputBox = () => {
   const [message, setMessage] = useState("");
   const onSend = () => {
@@ -17,10 +18,7 @@ const InputBox = () => {
   };
 
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === "ios" ? "padding" : "height"}
-      style={styles.container}
-    >
+    <SafeAreaView edges={["bottom"]} style={styles.container}>
       <AntDesign style={styles.add} name="plus" size={24} color={"royalblue"} />
 
       <TextInput
@@ -38,7 +36,7 @@ const InputBox = () => {
         size={24}
         color={"white"}
       />
-    </KeyboardAvoidingView>
+    </SafeAreaView>
   );
 };
 

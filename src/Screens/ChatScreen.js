@@ -4,7 +4,19 @@ import bg from "../../assets/images/BG.png";
 import message from "../../assets/data/messages.json";
 import Message from "../components/Message/Message";
 import InputBox from "../components/InputBox";
-const ChatScreen = () => {
+import { useNavigation, useRoute } from "@react-navigation/native";
+import { useEffect } from "react";
+const ChatScreen = ({ route, navigation }) => {
+  // const { params } = useRoute();       //we can use this method for destructure navigation params
+  // const navigation = useNavigation();
+
+  const { id, name } = route?.params;
+
+  useEffect(() => {
+    navigation.setOptions({
+      title: name,
+    });
+  }, [name]);
   return (
     <ImageBackground source={bg} style={styles.bg}>
       <FlatList

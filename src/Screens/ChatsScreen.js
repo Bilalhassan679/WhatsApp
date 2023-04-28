@@ -1,6 +1,6 @@
 import { FlatList } from "react-native";
 import chats from "../../assets/data/chats.json";
-import ChatListsItem from "../components";
+import ChatListsItem from "../components/Chat/ChatListsItem";
 const ChatsScreen = () => {
   return (
     <FlatList
@@ -8,6 +8,7 @@ const ChatsScreen = () => {
       renderItem={({ item }) => {
         return <ChatListsItem chats={item} />;
       }}
+      contentContainerStyle={{ backgroundColor: "white" }}
     />
   );
 };

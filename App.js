@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View, StatusBar } from "react-native";
-import ChatScreen from "./src/Screens/ChatScreen";
+
+import Navigator from "./src/Navigation";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <ChatScreen />
-      <StatusBar style="auto" />
+      <Navigator />
     </View>
   );
 }
@@ -13,7 +13,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "whitesmoke",
     justifyContent: "center",
   },
 });

@@ -16,17 +16,17 @@ const Contants = ({ user }) => {
       <Image
         style={styles.image}
         source={{
-          uri: user?.user?.image,
+          uri: user?.image,
         }}
       />
       <View style={styles.content}>
         <View style={styles.row}>
           <Text numberOfLines={1} style={styles.name}>
-            {user?.user?.name}
+            {user?.name}
           </Text>
         </View>
         <Text numberOfLines={1} style={styles.subTitle}>
-          {user?.user?.status}
+          {user?.status}
         </Text>
       </View>
     </Pressable>

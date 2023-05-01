@@ -7,6 +7,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import MainTabNavigator from "./MainTabNavigator";
 import ContantsScreen from "../Screens/ContantsScreen";
+import SettingScreen from "../Screens/SettingScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -29,6 +30,7 @@ const Navigator = () => {
         <Stack.Screen name="Chats" component={ChatsScreen} />
         <Stack.Screen name="Chat" component={ChatScreen} />
         <Stack.Screen name="Contants" component={ContantsScreen} />
+        <Stack.Screen name="Setting" component={SettingScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

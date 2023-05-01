@@ -1,1 +1,5 @@
 npx expo install @react-navigation/native  react-native-screens react-native-safe-area-context @react-navigation/native-stack @react-navigation/bottom-tabs
+
+//for installing aws configure
+//after this commmand "amplify pull --appId d1l8ue0qwzbdso --envName staging"
+npm install aws-amplify aws-amplify-react-native amazon-cognito-identity-js @react-native-community/netinfo @react-native-async-storage/async-storage

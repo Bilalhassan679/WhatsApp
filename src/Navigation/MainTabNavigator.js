@@ -2,6 +2,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import NotImplemented from "../Screens/NotImplemented";
 import ChatsScreen from "../Screens/ChatsScreen";
 import { Ionicons, Entypo } from "@expo/vector-icons";
+import SettingScreen from "../Screens/SettingScreen";
 const Tab = createBottomTabNavigator();
 const MainTabNavigator = () => {
   //Re-usable function
@@ -30,7 +31,7 @@ const MainTabNavigator = () => {
         options={tabBarComponent("logo-whatsapp")}
       />
       <Tab.Screen
-        name="Status2"
+        name="Calls"
         component={NotImplemented}
         options={tabBarComponent("call-outline")}
       />
@@ -66,8 +67,8 @@ const MainTabNavigator = () => {
         })}
       />
       <Tab.Screen
-        name="Status7"
-        component={NotImplemented}
+        name="Settings"
+        component={SettingScreen}
         options={tabBarComponent("settings-outline")}
       />
     </Tab.Navigator>

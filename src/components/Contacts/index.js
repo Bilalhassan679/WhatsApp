@@ -3,15 +3,23 @@ import { Image, StyleSheet, Text, View, Pressable } from "react-native";
 
 import { API, graphqlOperation, Auth } from "aws-amplify";
 import { createChatRoom, createUserChatRoom } from "../../graphql/mutations";
+import { getCommanChatRoomWithUser } from "../../Services/ChatRoomService";
 
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 dayjs.extend(relativeTime);
+
 const Contants = ({ user }) => {
   const navigation = useNavigation();
 
   const createChatRoomFunction = async () => {
     console.log("Pressed");
+    const existingChatRoom = await getCommanChatRoomWithUser(user.id);
+    if (existingChatRoom) {
+      navigation.navigate("Chat", { id: existingChatRoom.id });
+      return;
+    }
+
     // Check if we already have a ChatRoom with user
     // If not Then Create a new ChatRoom
     const newChatRoomData = await API.graphql(

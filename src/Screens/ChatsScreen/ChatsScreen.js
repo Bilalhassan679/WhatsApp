@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 import { API, graphqlOperation, Auth } from "aws-amplify";
 import { listChatRoom } from "./queries";
+
 const ChatsScreen = () => {
   const [chatsUser, setChatsUser] = useState([]);
   useEffect(() => {

@@ -17,6 +17,7 @@ const ChatScreen = ({ route, navigation }) => {
       title: name,
     });
   }, [name]);
+
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}

@@ -3,33 +3,34 @@ import { Image, StyleSheet, Text, View, Pressable } from "react-native";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 dayjs.extend(relativeTime);
-const ChatListsItem = ({ chats }) => {
+const ChatListsItem = ({ chat }) => {
   const navigation = useNavigation();
-
+  const users = chat.users.items[0].user;
+  console.log(chat.LastMessage, "users");
   return (
     <Pressable
       onPress={() =>
-        navigation.navigate("Chat", { id: chats?.id, name: chats?.user?.name })
+        navigation.navigate("Chat", { id: chat.id, name: users?.name })
       }
       style={styles.contaier}
     >
       <Image
         style={styles.image}
         source={{
-          uri: chats?.user?.image,
+          uri: users?.image,
         }}
       />
       <View style={styles.content}>
         <View style={styles.row}>
           <Text numberOfLines={1} style={styles.name}>
-            {chats?.user?.name}
+            {users?.name}
           </Text>
           <Text style={styles.subTitle}>
-            {dayjs(chats?.lastMessage?.createdAt).fromNow(true)}
+            {dayjs(chat.lastMessage).fromNow(true)}
           </Text>
         </View>
         <Text numberOfLines={2} style={styles.subTitle}>
-          {chats?.lastMessage?.text}
+          {chat.LastMessage}
         </Text>
       </View>
     </Pressable>

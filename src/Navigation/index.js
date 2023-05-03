@@ -1,5 +1,5 @@
 import { View, Text } from "react-native";
-import ChatsScreen from "../Screens/ChatsScreen";
+import ChatsScreen from "../Screens/ChatsScreen/ChatsScreen";
 import ChatScreen from "../Screens/ChatScreen";
 
 import { Entypo } from "@expo/vector-icons";

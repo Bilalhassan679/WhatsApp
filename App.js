@@ -15,19 +15,20 @@ import { createUser } from "./src/graphql/mutations";
 Amplify.configure({ ...amplifyConfig, Analytics: { disabled: true } });
 
 function App() {
+  //BE-3 work
   useEffect(() => {
     const syncData = async () => {
       //Get User Auth Data
       const authUser = await Auth.currentAuthenticatedUser({
         bypassCache: true,
       });
-      console.log("first", authUser);
+      // console.log("first", authUser);
 
       //query the database using Auth user id (sub)
       const userData = await API.graphql(
         graphqlOperation(getUser, { id: authUser.attributes.sub })
       );
-      console.log("second", userData.data.getUser);
+      // console.log("second", userData.data.getUser);
 
       if (userData.data.getUser) {
         console.log("User Already Exists in Db");
@@ -48,6 +49,7 @@ function App() {
 
     syncData();
   }, []);
+  //BE-3 work -<
 
   return (
     <View style={styles.container}>
